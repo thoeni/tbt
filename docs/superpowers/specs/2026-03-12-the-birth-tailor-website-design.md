@@ -41,7 +41,7 @@ Static informational website for "The Birth Tailor", a maternity/pregnancy consu
 | Role | Font | Source |
 |------|------|--------|
 | Headings | Playfair Display (600 weight) | Google Fonts |
-| Body | Inter or Source Sans Pro (400, 700) | Google Fonts |
+| Body | Source Sans Pro (400, 700) | Google Fonts |
 | Logo | Aveutan script (or redesigned) | Custom/local |
 
 ### Visual Characteristics
@@ -67,7 +67,7 @@ Single-page design with smooth-scroll navigation across 4 sections.
 
 - Full viewport height
 - Warm cream background
-- Logo centred or top-left, rendered in brand colours (dark text or blue accent)
+- Logo in the nav bar (top-left); no separate logo in the hero body -- the headline is the hero
 - Large serif headline: "Personalised guidance for your pregnancy journey"
 - Subtitle: "Bespoke antenatal support from a senior midwife and FEDANT-approved educator"
 - Dahlia illustration as a large decorative watermark -- approximately 40% opacity, offset to one side/corner, providing depth without competing with text
@@ -87,7 +87,7 @@ Single-page design with smooth-scroll navigation across 4 sections.
 ### Section 3: Services
 
 - Section heading: "How I can help" (or similar)
-- Card grid: 2 columns on desktop, 1 column on mobile
+- Card grid: 2 columns on desktop (last card centred if odd count), 1 column on mobile
 - Each card has:
   - Small colour accent (alternating blue/pink line)
   - Title
@@ -122,7 +122,7 @@ Single-page design with smooth-scroll navigation across 4 sections.
 ## Responsive Behaviour
 
 - **Desktop (>992px)**: full two-column layouts, horizontal nav, large hero typography
-- **Tablet (768-992px)**: reduced whitespace, two-column layouts may narrow
+- **Tablet (768-992px)**: two-column layouts retained but with reduced padding (80px -> 40px), narrower max-width
 - **Mobile (<768px)**: single column throughout, hamburger nav, stacked hero, stacked about section, single-column service cards
 
 ## Performance
@@ -137,7 +137,7 @@ Single-page design with smooth-scroll navigation across 4 sections.
 
 - Semantic HTML5 structure (header, main, section, footer)
 - Meta title: "The Birth Tailor -- Personalised Pregnancy & Birth Support"
-- Meta description based on homepage content
+- Meta description: "Expert antenatal support tailored to you. Becks is a senior midwife and FEDANT-approved educator offering personalised pregnancy consultations in person and online."
 - Open Graph tags for social sharing
 - Existing Google Analytics ID: G-8SB95KXBHV
 
@@ -150,7 +150,7 @@ From existing repo (thoeni/thebirthtailor.co.uk):
 - `website/static/images/illustrations/fedant-logo-4.png` -- FEDANT badge
 - `website/static/images/social/Instagram.svg` -- Instagram icon
 - `website/static/fonts/aveutan.ttf` -- script font (for logo if retained)
-- `website/static/favicon-32x32.svg` -- favicon (may redesign)
+- `website/static/favicon-32x32.svg` -- favicon (provide .ico and .png fallbacks for cross-browser support)
 
 ## Out of Scope
 
