@@ -26,7 +26,7 @@
   function createOverlay() {
     overlay = document.createElement('div');
     overlay.className = 'nav__overlay';
-    nav.appendChild(overlay);
+    document.body.appendChild(overlay);
     overlay.addEventListener('click', closeMenu);
   }
 
@@ -47,7 +47,7 @@
   }
 
   hamburger.addEventListener('click', function () {
-    var isOpen = navLinks.classList.contains('nav__links--open');
+    const isOpen = navLinks.classList.contains('nav__links--open');
     if (isOpen) {
       closeMenu();
     } else {
@@ -64,29 +64,33 @@
   // ========================================
   // Scroll-triggered Fade-in Animations
   // ========================================
-  var fadeElements = document.querySelectorAll('.about, .services__card, .services__pricing, .contact');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  fadeElements.forEach(function (el) {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-  });
+  if (!prefersReducedMotion) {
+    const fadeElements = document.querySelectorAll('.about, .services__card, .services__pricing, .contact');
 
-  var observer = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = '1';
-        entry.target.style.transform = 'translateY(0)';
-        observer.unobserve(entry.target);
-      }
+    fadeElements.forEach(function (el) {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
     });
-  }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -40px 0px'
-  });
 
-  fadeElements.forEach(function (el) {
-    observer.observe(el);
-  });
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    fadeElements.forEach(function (el) {
+      observer.observe(el);
+    });
+  }
 
 })();
