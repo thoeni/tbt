@@ -266,7 +266,8 @@ strong {
 }
 
 .about__badge {
-  margin-top: 24px;
+  display: block;
+  margin: 24px auto 0;
   max-width: 100px;
   opacity: 0.8;
 }
