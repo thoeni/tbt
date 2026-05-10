@@ -272,6 +272,14 @@ strong {
   opacity: 0.8;
 }
 
+.about__register {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 0.85em;
+  color: var(--color-text-secondary);
+  opacity: 0.8;
+}
+
 /* ============================================
    Services Section
    ============================================ */
